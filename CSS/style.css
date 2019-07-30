@@ -48,7 +48,11 @@ h1 {
   color: black;
   font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
 }
-
+#TeaCo {
+  color: white;
+  background-color: #5E74CC;
+  font-family: "Times New Roman", Times, serif;
+}
 
 /* Media Queries */
 @media only screen and (max-width: 1920px) {

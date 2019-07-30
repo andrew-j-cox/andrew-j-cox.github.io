@@ -1,0 +1,70 @@
+html {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+body {
+  background-color: #004680;
+}
+.wrapper {
+  padding: 10px;
+  position: relative;
+  width: 60vw;
+  background-color: white;
+  margin: 50px auto 0 auto;
+}
+header {
+  border-bottom: solid grey;
+}
+img {
+  position: absolute;
+  top: 3px;
+  right: 0;
+  height: 100px;
+}
+h1 {
+  font-size: 40px;
+}
+label {
+  font-size: 25px;
+}
+.item {
+  width: 100%;
+  margin: 25px auto;
+  border-bottom: solid 2px lightgrey;
+  padding-bottom: 10px;
+}
+.item input {
+  font-size: 25px;
+  width: 99%;
+}
+.item .date {
+  display: block;
+  width: 50%;
+}
+.item select {
+  display: block;
+  width: 50%;
+  font-size: 20px;
+}
+footer {
+  width: 100%;
+  border-top: solid grey;
+  padding-top: 25px;
+}
+footer nav {
+  display: block;
+  margin: 0 auto;
+}
+footer a {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: #0072CE;
+  padding: 20px 50px;
+  margin: 0 auto;
+  transition: background-color .2s;
+}
+footer a:hover {
+  color: white;
+  background-color: #4dafff;
+}

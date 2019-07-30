@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" id="page">
+  <head>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Alien Website</title>
+    <script src="JS/player.js"></script>
+    <script src="JS/gallery.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="Icon" href="CSS/IMG/icon.ico"/>
+  </head>
+    <div class="site-bar">
+      <a href="../index.html"><--- Back to Home</a>
+    </div>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>MEDIA</h1>
+      </header>
+      <img title="Weyland Yutani Corp" class="logo" src="CSS/IMG/Weyland_Yutani2.png" alt="Weyland Yutani corp logo">
+      <div class="line" style="width: 50px; height: 2px; background-color: #FFF; position: absolute; margin: 25px 0 0 200px;"></div>
+      <div class="line" style="width: 2px; height: 320px; background-color: #FFF; position: absolute; margin: 25px 0 0 200px;"></div>
+      <div class="line" style="width: 40px; height: 2px; background-color: #FFF; position: absolute; margin: 345px 0 0 162px;"></div>
+      <label class="burger-label" for="burger"></label>
+      <input class="burger" id="burger" type="checkbox">
+      <nav class="main-menu" id="main-menu">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT FILM</a>
+        <a href="buy.html">BUY FILM</a>
+        <a href="media.html" style="border-color: #FFF; color: #FFF;">MEDIA</a>
+        <a href="legal.html">LEGAL</a>
+      </nav>
+      <div class="subNav">
+        <p>B:\docuents\media.doc</p>
+      </div>
+      <div class="subHeading">
+        <h2>B:\</h2>
+      </div>
+      <main>
+        <article>
+          <div class="videoBox" id="videoBox">
+            <video id="video">
+              <source src="VID/trailer.mp4" type="video/mp4">
+            </video>
+            <div class="vidNav" id="vidNav">
+              <button id="back" class="fa fa-backward"></button>
+              <button id="playButton" class="fa fa-play"></button>
+              <button id="forward" class="fa fa-forward"></button>
+              <button id="Youtube" class="fa fa-youtube-play"></button>
+              <button id="fullScreen" class="fa fa-arrows-alt"></button>
+              <input type="range" id="timeLine" value="0">
+              <div class="volumeBox">
+                <button id="mute" class="fa fa-volume-up"></button>
+                <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+              </div>
+            </div>
+          </div>
+          <p>Alien trailer, approved for all audiences by the Motion Picture Association of America</p>
+          <div id="galleryWrapper" class="gallery-wrapper">
+              <button id="gallery-back" class="fa fa-backward gallery-back"></button>
+              <button id="gallery-next" class="fa fa-forward gallery-next"></button>
+              <p id="pageTag" class="page-tag"></p>
+            <div id="gallery" class="gallery">
+              <div class="gallery-group">
+                <img class="imgBg" src="CSS/IMG/placeholder.png" alt="Error loading image">
+                <img class="imgBg" src="CSS/IMG/placeholder.png" alt="Error loading image">
+                <img class="imgBg" src="CSS/IMG/placeholder.png" alt="Error loading image">
+                <img class="imgBg" src="CSS/IMG/placeholder.png" alt="Error loading image">
+
+                <img class="imgFg" src="CSS/IMG/gallery1.jpg" alt="Nostromo Ship computer">
+                <img class="imgFg" src="CSS/IMG/gallery2.jpg" alt="Nostromo deep space towing vessel">
+                <img class="imgFg" src="CSS/IMG/gallery3.jpg" alt="Nostromo landing craft">
+                <img class="imgFg" src="CSS/IMG/gallery4.jpg" alt="Nostromo landing craft exiting main vessel">
+              </div>
+              <div class="gallery-group">
+                <img class="imgBg" src="CSS/IMG/placeholder.png" alt="Error loading image">
+                <img class="imgBg" src="CSS/IMG/placeholder.png" alt="Error loading image">
+                <img class="imgBg" src="CSS/IMG/placeholder.png" alt="Error loading image">
+                <img class="imgBg" src="CSS/IMG/placeholder.png" alt="Error loading image">
+
+                <img class="imgFg" src="CSS/IMG/gallery5.jpg" alt="Moon designated LV-426">
+                <img class="imgFg" src="CSS/IMG/gallery6.jpg" alt="The creature known as The Space Jockey">
+                <img class="imgFg" src="CSS/IMG/gallery7.jpg" alt="Xenomorph egg">
+                <img class="imgFg" src="CSS/IMG/gallery8.jpg" alt="Xenomorph FaceHugger">
+              </div>
+              <div class="gallery-group">
+                <img class="imgBg" src="CSS/IMG/placeholder.png" alt="Error loading image">
+                <img class="imgBg" src="CSS/IMG/placeholder.png" alt="Error loading image">
+                <img class="imgBg" src="CSS/IMG/placeholder.png" alt="Error loading image">
+                <img class="imgBg" src="CSS/IMG/placeholder.png" alt="Error loading image">
+
+                <img class="imgFg" src="CSS/IMG/gallery9.jpg" alt="Xenomorph infant">
+                <img class="imgFg" src="CSS/IMG/gallery10.jpg" alt="Corridor on the Nostromo">
+                <img class="imgFg" src="CSS/IMG/gallery11.jpg" alt="Jones the cat">
+                <img class="imgFg" src="CSS/IMG/gallery12.jpg" alt="Fully grown Xenomorph">
+              </div>
+            </div>
+          </div>
+          <h3 class="swipe"><i class="fa fa-arrow-left" aria-hidden="true"></i> SWIPE <i class="fa fa-arrow-right" aria-hidden="true"></i></h3>
+          <div class="alt-gallery">
+            <div class="alt-group">
+              <a href="CSS/IMG/gallery1.jpg" target="_blank"><img src="CSS/IMG/gallery1.jpg" alt="Nostromo Ship computer"></a>
+              <a href="CSS/IMG/gallery2.jpg" target="_blank"><img src="CSS/IMG/gallery2.jpg" alt="Nostromo deep space towing vessel"></a>
+              <a href="CSS/IMG/gallery3.jpg" target="_blank"><img src="CSS/IMG/gallery3.jpg" alt="Nostromo landing craft"></a>
+              <a href="CSS/IMG/gallery4.jpg" target="_blank"><img src="CSS/IMG/gallery4.jpg" alt="Nostromo landing craft exiting main vessel"></a>
+              <a href="CSS/IMG/gallery5.jpg" target="_blank"><img src="CSS/IMG/gallery5.jpg" alt="Moon designated LV-426"></a>
+              <a href="CSS/IMG/gallery6.jpg" target="_blank"><img src="CSS/IMG/gallery6.jpg" alt="The creature known as The Space Jockey"></a>
+              <a href="CSS/IMG/gallery7.jpg" target="_blank"><img src="CSS/IMG/gallery7.jpg" alt="Xenomorph egg"></a>
+              <a href="CSS/IMG/gallery8.jpg" target="_blank"><img src="CSS/IMG/gallery8.jpg" alt="Xenomorph FaceHugger"></a>
+              <a href="CSS/IMG/gallery9.jpg" target="_blank"><img src="CSS/IMG/gallery9.jpg" alt="Xenomorph infant"></a>
+              <a href="CSS/IMG/gallery10.jpg" target="_blank"><img src="CSS/IMG/gallery10.jpg" alt="Corridor on the Nostromo"></a>
+              <a href="CSS/IMG/gallery11.jpg" target="_blank"><img src="CSS/IMG/gallery11.jpg" alt="Jones the cat"></a>
+              <a href="CSS/IMG/gallery12.jpg" target="_blank"><img src="CSS/IMG/gallery12.jpg" alt="Fully grown Xenomorph"></a>
+            </div>
+          </div>
+        </article>
+      </main>
+      <footer>
+        <p>&copy; 2016 Andrew Cox</p>
+      </footer>
+    </div>
+  </body>
+</html>

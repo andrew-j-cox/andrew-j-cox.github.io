@@ -3,7 +3,8 @@ html {
   overflow: hidden;
 }
 body {
-  background-image: url("../Images/bg.jpg")
+  background-image: url("../Images/bg.jpg");
+  background-color: #00749d;
 }
 .site-bar {
   background-color: white;

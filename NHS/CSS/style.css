@@ -1,7 +1,7 @@
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	background-color: #00749d;
-	background-image: url("../IMAGES/bg.jpg");
+	background-image: url("../Images/bg.jpg");
 	background-repeat: no-repeat;
 }
 .wrapper {
@@ -28,7 +28,7 @@ h1 {
 	color: white;
 	float: left;
 	font-size: 20px;
-	padding: 20px 50px 0 50px; 
+	padding: 20px 50px 0 50px;
 	border: 0 none;
 	cursor: pointer;
 	transition: background-color 0.2s;
@@ -119,27 +119,27 @@ div#change-request-data table tbody tr td, div#change-request-data table thead t
 }
 @media only screen and (max-width: 2560px) {
 	body {
-		background-size: 2560px 1440px;	
+		background-size: 2560px 1440px;
 	}
 }
-@media only screen and (max-width: 1920px) { 
+@media only screen and (max-width: 1920px) {
 	body {
 		background-size: 1920px 1080px;
 	}
 }
-@media only screen and (max-width: 1000px) { 
+@media only screen and (max-width: 1000px) {
 	.wrapper {
 		width: 600px;
 	}
 	content a {
 		width: 180px;
 	}
-	
+
 	content a:last-child {
 		width: 80%;
 	}
 }
-@media only screen and (max-width: 700px) { 
+@media only screen and (max-width: 700px) {
 	h1 {
 		text-align: center;
 	}

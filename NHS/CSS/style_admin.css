@@ -1,5 +1,9 @@
-html {
-
+.site-bar {
+  width: 100%;
+  background-color: black;
+}
+.site-bar a {
+  padding: 10px;
 }
 body {
 	font-family: Arial, Helvetica, sans-serif;

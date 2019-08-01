@@ -152,7 +152,7 @@ div#change-request-data table tbody tr td, div#change-request-data table thead t
 		margin: 0;
 		padding: 0;
 	}
-	content a {
+	#mainpage content a {
 		display: block;
 		line-height: 65px;
 		width: 80%;

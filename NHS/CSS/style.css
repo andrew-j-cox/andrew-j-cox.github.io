@@ -131,11 +131,11 @@ div#change-request-data table tbody tr td, div#change-request-data table thead t
 	.wrapper {
 		width: 600px;
 	}
-	content a {
+	#mainpage content a {
 		width: 180px;
 	}
 
-	content a:last-child {
+	#mainpage content a:last-child {
 		width: 80%;
 	}
 }

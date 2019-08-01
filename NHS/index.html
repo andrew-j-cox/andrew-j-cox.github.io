@@ -5,7 +5,7 @@
 		<link rel="stylesheet" href="CSS/style.css"/>
 		<link rel="icon" type="image/x-icon" href="Images/favicon.ico"/>
 		<link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico"/>
-		<script src="./../../SiteAssets/JS/jquery-1.12.4.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<title>Employment Services</title>
 		<script>
 			$(document).ready(function() {
@@ -14,7 +14,7 @@
 				var searchButton = $('input[id="submit-query"]');
 				var searchInput = $('input[id="search-request"]');
 				var searchResults = '';
-			
+
 				$('#searchbutton').click(function() {
 					$('#mainpage').fadeOut(fadeSpeed, function() {
 						$('#secondpage').fadeIn(fadeSpeed);
@@ -23,136 +23,6 @@
 				$('#backToHome').click(function() {
 					$('#secondpage').fadeOut(fadeSpeed, function() {
 						$('#mainpage').fadeIn(fadeSpeed);
-					});
-				});
-				
-				// Remove page refresh on form submission
-				$('form').submit(function() {
-					return false;
-				});
-				
-				// Make return key act as a submission
-				$(document).bind('keypress', function(e) {
-					if(e.keyCode==13){
-						 $('#submit-query').trigger('click');
-					 }
-				});
-				
-				// Behaviour for the 'Search' button when clicked
-				searchButton.click(function() {
-					$('div#change-request-data').fadeOut(fadeSpeed, function() {
-						$('div#change-request-data table tbody').html('');
-						searchResults = '';
-					});
-					$('div#recruitment-request-data').fadeOut(fadeSpeed, function() {
-						$('div#recruitment-request-data table tbody').html('');
-						searchResults = '';
-					});
-					$('div#termination-request-data').fadeOut(fadeSpeed, function() {
-						$('div#termination-request-data table tbody').html('');
-						searchResults = '';
-					});
-					$('div#legacy-request-data').fadeOut(fadeSpeed, function() {
-						$('div#legacy-request-data table tbody').html('');
-						searchResults = '';
-					});
-					$('p#search-result-info').fadeOut(fadeSpeed, function() {
-						var referenceNumber = searchInput.val();
-						var resultMessage = 'No results found for \'' + referenceNumber + '\'.';
-						if (referenceNumber === '') {
-							// No reference number supplied
-							$('p#search-result-info').html('No search criteria specified.');
-							$('p#search-result-info').fadeIn(fadeSpeed);
-						} else {
-							// Attempt v2 search
-							var v2RequestData = $.ajax({
-								dataType: 'json',
-								async: false,
-								url: 'http://thehub/EstablishmentControlSystem/_vti_bin/listdata.svc/ECFV2Request?$filter=ECFRef eq \'' + referenceNumber + '\''
-							}).responseJSON;
-							// v3
-							var changeRequestData = $.ajax({
-								dataType: 'json',
-								async: false,
-								url: 'http://thehub/EstablishmentControlSystem/_vti_bin/listdata.svc/ChangeRequestVersion30?$filter=ReferenceNumber eq \'' + referenceNumber + '\''
-							}).responseJSON;
-							var recruitmentRequestData = $.ajax({
-								dataType: 'json',
-								async: false,
-								url: 'http://thehub/EstablishmentControlSystem/_vti_bin/listdata.svc/RecruitmentRequestVersion30?$filter=ReferenceNumber eq \'' + referenceNumber + '\''
-							}).responseJSON;
-							var terminationRequestData = $.ajax({
-								dataType: 'json',
-								async: false,
-								url: 'http://thehub/EstablishmentControlSystem/_vti_bin/listdata.svc/TerminationRequestVersion30?$filter=ReferenceNumber eq \'' + referenceNumber + '\''
-							}).responseJSON;
-							
-							if (JSON.stringify(v2RequestData.d.results) === '[]' && JSON.stringify(changeRequestData.d.results) === '[]' && JSON.stringify(recruitmentRequestData.d.results) === '[]' && JSON.stringify(terminationRequestData.d.results) === '[]') {
-								resultMessage = 'No result found for \'' + referenceNumber + '\'.';
-								$('p#search-result-info').html(resultMessage);
-								$('p#search-result-info').fadeIn(fadeSpeed);
-							} else {
-								var queryResults = changeRequestData.d.results;
-								var requestType = 'Change';
-								var urlEditForm = 'http://thehub/EstablishmentControlSystem/SitePages/' + requestType + 'Request/Edit' + requestType + 'Request.aspx?ID=';
-								var urlViewForm = 'http://thehub/EstablishmentControlSystem/SitePages/' + requestType + 'Request/View' + requestType + 'Request.aspx?ID=';
-								if (JSON.stringify(queryResults) !== '[]') {
-									$.each(queryResults, function(index, element) {
-										searchResults = searchResults + '<tr><td>' + queryResults[index].ReferenceNumber + '</td><td>' + requestType + '</td><td><a href="' + urlEditForm + queryResults[index].Id + '" target="_blank">Edit</a></td><td><a href="' + urlViewForm + queryResults[index].Id + '" target="_blank">View</a></td></tr>';
-										$('div#' + requestType.toLowerCase() + '-request-data table tbody').append(searchResults);
-										searchResults = '';
-									});
-									resultMessage = 'Showing results for \'' + referenceNumber + '\'.';
-									$('div#' + requestType.toLowerCase() + '-request-data').fadeIn(fadeSpeed);
-									$('p#search-result-info').html(resultMessage);
-									$('p#search-result-info').fadeIn(fadeSpeed);
-								}
-								queryResults = recruitmentRequestData.d.results;
-								requestType = 'Recruitment';
-								urlEditForm = 'http://thehub/EstablishmentControlSystem/SitePages/' + requestType + 'Request/Edit' + requestType + 'Request.aspx?ID=';
-								urlViewForm = 'http://thehub/EstablishmentControlSystem/SitePages/' + requestType + 'Request/View' + requestType + 'Request.aspx?ID=';
-								if (JSON.stringify(queryResults) !== '[]') {
-									$.each(queryResults, function(index, element) {
-										searchResults = searchResults + '<tr><td>' + queryResults[index].ReferenceNumber + '</td><td>' + requestType + '</td><td><a href="' + urlEditForm + queryResults[index].Id + '" target="_blank">Edit</a></td><td><a href="' + urlViewForm + queryResults[index].Id + '" target="_blank">View</a></td></tr>';
-										$('div#' + requestType.toLowerCase() + '-request-data table tbody').append(searchResults);
-										searchResults = '';
-									});
-									resultMessage = 'Showing results for \'' + referenceNumber + '\'.';
-									$('div#' + requestType.toLowerCase() + '-request-data').fadeIn(fadeSpeed);
-									$('p#search-result-info').html(resultMessage);
-									$('p#search-result-info').fadeIn(fadeSpeed);
-								}
-								queryResults = terminationRequestData.d.results;
-								requestType = 'Termination';
-								urlEditForm = 'http://thehub/EstablishmentControlSystem/SitePages/' + requestType + 'Request/Edit' + requestType + 'Request.aspx?ID=';
-								urlViewForm = 'http://thehub/EstablishmentControlSystem/SitePages/' + requestType + 'Request/View' + requestType + 'Request.aspx?ID=';
-								if (JSON.stringify(queryResults) !== '[]') {
-									$.each(queryResults, function(index, element) {
-										searchResults = searchResults + '<tr><td>' + queryResults[index].ReferenceNumber + '</td><td>' + requestType + '</td><td><a href="' + urlEditForm + queryResults[index].Id + '" target="_blank">Edit</a></td><td><a href="' + urlViewForm + queryResults[index].Id + '" target="_blank">View</a></td></tr>';
-										$('div#' + requestType.toLowerCase() + '-request-data table tbody').append(searchResults);
-										searchResults = '';
-									});
-									resultMessage = 'Showing results for \'' + referenceNumber + '\'.';
-									$('div#' + requestType.toLowerCase() + '-request-data').fadeIn(fadeSpeed);
-									$('p#search-result-info').html(resultMessage);
-									$('p#search-result-info').fadeIn(fadeSpeed);
-								}
-								queryResults = v2RequestData.d.results;
-								requestType = 'Legacy';
-								urlOpenForm = 'http://thehub/EstablishmentControlSystem/ECFV2Request/';
-								if (JSON.stringify(queryResults) !== '[]') {
-									$.each(queryResults, function(index, element) {
-										searchResults = searchResults + '<tr><td>' + queryResults[index].ECFRef + '</td><td>' + requestType + '</td><td><a href="' + urlOpenForm + queryResults[index].Name + '" target="_blank">Open</a></td></tr>';
-										$('div#' + requestType.toLowerCase() + '-request-data table tbody').append(searchResults);
-										searchResults = '';
-									});
-									resultMessage = 'Showing results for \'' + referenceNumber + '\'.';
-									$('div#' + requestType.toLowerCase() + '-request-data').fadeIn(fadeSpeed);
-									$('p#search-result-info').html(resultMessage);
-									$('p#search-result-info').fadeIn(fadeSpeed);
-								}
-							}
-						}
 					});
 				});
 			});
@@ -166,21 +36,21 @@
 					<h1>Employment Services</h1>
 				</header>
 				<content class="clear_float">
-					<a target="_blank" rel="noopener noreferrer" href="http://thehub/EstablishmentControlSystem/SitePages/ChangeRequest/NewChangeRequest.aspx">Change Form</a>
-					<a target="_blank" rel="noopener noreferrer" href="http://thehub/EstablishmentControlSystem/SitePages/RecruitmentRequest/NewRecruitmentRequest.aspx">Recruitment Form</a>
-					<a target="_blank" rel="noopener noreferrer" href="http://thehub/EstablishmentControlSystem/SitePages/TerminationRequest/NewTerminationRequest.aspx">Termination Form</a>
-					<a target="_blank" rel="noopener noreferrer" href="http://thehub/EstablishmentControlSystem/Documents/Advertisement Request Form.xlsm">Advertisment Form</a>
+					<a target="_blank" rel="noopener noreferrer" href="#">Change Form</a>
+					<a target="_blank" rel="noopener noreferrer" href="#">Recruitment Form</a>
+					<a target="_blank" rel="noopener noreferrer" href="#">Termination Form</a>
+					<a target="_blank" rel="noopener noreferrer" href="#">Advertisment Form</a>
 					<a id="searchbutton" href="#">Search Form</a>
-					<a target="_blank" rel="noopener noreferrer" href="http://thehub/EstablishmentControlSystem/SitePages/InternalAppointmentRequest/NewInternalAppointmentRequest.aspx">Internal Appointment Form</a>
-					<a target="_blank" rel="noopener noreferrer" href="http://thehub/EmploymentServices/Lists/NewStarterRequest/NewNewStarterRequest.aspx">New Starter Form</a>
-					<a target="_blank" rel="noopener noreferrer" href="http://thehub/EmploymentServices/Lists/AdoptionMaternityPaternityRequest/NewAMPRequest.aspx">Adoption Maternity Paternity Form</a>
-					<a target="_blank" rel="noopener noreferrer" href="http://thehub/EmploymentServices/Lists/JobPlanningForm/NewJobPlanningForm.aspx">Job Planning Form</a>
+					<a target="_blank" rel="noopener noreferrer" href="#">Internal Appointment Form</a>
+					<a target="_blank" rel="noopener noreferrer" href="#">New Starter Form</a>
+					<a target="_blank" rel="noopener noreferrer" href="#">Adoption Maternity Paternity Form</a>
+					<a target="_blank" rel="noopener noreferrer" href="#">Job Planning Form</a>
 				</content>
 				<footer>
 					<p class="clear_float">For support please contact Workforce Information at:</p>
-					<p><a href="mailto:whh.workforce.information@nhs.net">whh.workforce.information@nhs.net</a></p>
+					<p><a href="#">whh.workforce.information@nhs.net</a></p>
 					<p>EXT: 2736</p>
-					<p><a href="http://thehub/EmploymentServices/SitePages/Landing/admin.html">Admin Access</a></p>
+					<p><a href="admin.html">Admin Access</a></p>
 				</footer>
 			</div>
 			<div id="secondpage">

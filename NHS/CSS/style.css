@@ -3,10 +3,11 @@
 	top: 0;
 	left: 0;
   width: 100%;
-  background-color: black;
+	background-color: #f7f7f7;
 }
 .site-bar a {
   padding: 10px;
+	background-color: #005EB8;
 }
 body {
 	font-family: Arial, Helvetica, sans-serif;

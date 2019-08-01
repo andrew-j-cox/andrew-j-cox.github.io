@@ -5,6 +5,7 @@ body {
 	background-repeat: no-repeat;
 }
 .wrapper {
+	position: relative;
 	background-color: #f7f7f7;
 	width: 800px;
 	margin: 8% auto 0 auto;
@@ -61,8 +62,10 @@ footer p {
 	bottom: 0;
 }
 .logo {
-	width: 250px;
-	float: right;
+	height: 75px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
 }
 footer a {
 	text-decoration: none;

@@ -142,6 +142,7 @@ div#change-request-data table tbody tr td, div#change-request-data table thead t
 	}
 	.logo {
 		height: 50px;
+		top: 25px;
 	}
 }
 @media only screen and (max-width: 700px) {

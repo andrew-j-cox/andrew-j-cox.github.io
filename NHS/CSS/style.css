@@ -10,6 +10,9 @@
 	color: #005EB8;
 	text-decoration: none;
 }
+.site-bar a:hover {
+	color: #1a9cff;
+}
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	background-color: #00749d;

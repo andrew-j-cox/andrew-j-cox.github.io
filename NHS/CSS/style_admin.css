@@ -1,0 +1,123 @@
+html {
+
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #f7d4e7;
+	background-image: url("../IMAGES/bg_admin.jpg");
+	background-repeat: no-repeat;
+	transition: background-image .1s;
+}
+.wrapper {
+	position: relative;
+	background-color: #f7f7f7;
+	width: 800px;
+	margin: 8% auto 0 auto;
+	padding: 10px 20px;
+}
+content {
+	margin: 0 auto;
+}
+h1 {
+	float; left;
+}
+content a {
+	text-decoration: none;
+	color: black;
+	height: 90px;
+	width: 146px;
+	text-align: center;
+	margin: 10px;
+	display: inline-block;
+	background-color: #8A1538;
+	color: white;
+	float: left;
+	font-size: 20px;
+	padding: 20px 50px 0 50px; 
+	border: 0 none;
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+content a:hover {
+	background-color: #be375f;
+}
+content a:active {
+	background-color: #8e2948;
+}
+footer {
+	padding-top: 10px;
+}
+footer p:nth-child(1) {
+	border-top: 1px solid lightgrey;
+}
+footer p {
+	text-align: center;
+	margin: 0;
+}
+.clear_float {
+	clear: both;
+}
+.splash {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.logo {
+	height: 75px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+footer a {
+	text-decoration: none;
+	text-decoration: underline;
+	color: #8A1538;
+}
+@media only screen and (max-width: 2560px) {
+	body {
+		background-size: 2560px 1440px;	
+	}
+}
+@media only screen and (max-width: 1920px) { 
+	body {
+		background-size: 1920px 1080px;
+	}
+}
+@media only screen and (max-width: 1000px) { 
+	.wrapper {
+		width: 600px;
+	}
+	content a {
+		width: 180px;
+	}
+	
+	content a:last-child {
+		width: 80%;
+	}
+}
+@media only screen and (max-width: 700px) { 
+	h1 {
+		text-align: center;
+	}
+	body {
+		padding: 0;
+		margin: 0;
+	}
+	.wrapper {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	content a {
+		display: block;
+		line-height: 65px;
+		width: 80%;
+		float: none;
+		margin: 10px auto;
+	}
+	.logo {
+		position: static;
+		margin: 0 auto;
+		display: block;
+	}
+}

@@ -1,87 +1,170 @@
-html {
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-  overflow: hidden;
-}
 body {
-  background-color: #00749d;
-  background-image: url("../Images/bg.jpg");
-}
-.site-bar {
-  background-color: white;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 5px;
-  height: 25px;
-}
-.site-bar a {
-  text-decoration: none;
-  color: black;
-}
-.site-bar a:hover {
-  color: #0072CE;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #00749d;
+	background-image: url("../IMAGES/bg.jpg");
+	background-repeat: no-repeat;
 }
 .wrapper {
-  position: relative;
-  padding: 10px;
-  background-color: white;
-  width: 740px;
-  margin: 180px auto 0 auto;
+	background-color: #f7f7f7;
+	width: 800px;
+	margin: 8% auto 0 auto;
+	padding: 10px 20px;
 }
-img {
-  position: absolute;
-  top: 15px;
-  right: 0;
-  width: 120px;
-  margin: 0;
+content {
+	margin: 0 auto;
 }
-content a {
-  text-align: center;
-  display: block;
-  float: left;
-  text-decoration: none;
-  color: white;
-  background-color: #0072CE;
-  transition: background-color .2s;
-  width: 225px;
-  height: 85px;
-  margin: 10px;
-  padding-top: 40px;
-  font-size: 20px;
+h1 {
+	float; left;
 }
-content a:hover {
-  color: white;
-  background-color: #4dafff;
+#mainpage content a {
+	text-decoration: none;
+	color: black;
+	height: 90px;
+	width: 146px;
+	text-align: center;
+	margin: 10px;
+	display: inline-block;
+	background-color: #005EB8;
+	color: white;
+	float: left;
+	font-size: 20px;
+	padding: 20px 50px 0 50px; 
+	border: 0 none;
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+#mainpage content a:hover {
+	background-color: #1a9cff;
+}
+#mainpage content a:active {
+	background-color: #005799;
+}
+#secondpage {
+	display: none;
 }
 footer {
-  clear: both;
-  text-align: center;
-  padding: 10px 0;
+	padding-top: 10px;
+}
+footer p:nth-child(1) {
+	border-top: 1px solid lightgrey;
 }
 footer p {
-  margin: 2px;
+	text-align: center;
+	margin: 0;
 }
-@media only screen and (max-width: 1920px) {
-  body {
-    background-size: 1920px 1080px;
-  }
+.clear_float {
+	clear: both;
 }
-@media only screen and (max-width: 800px) {
-  .site-bar {
-    top: auto;
-    bottom: 0;
-  }
-  .wrapper {
-    width: 85vw;
-    height: 90vh;
-    margin: 0 auto;
-    overflow: scroll;
-  }
-  content a {
-    width: 90%;
-    margin: 10px auto;
-    display: block;
-    float: none;
-  }
+.splash {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.logo {
+	width: 250px;
+	float: right;
+}
+footer a {
+	text-decoration: none;
+	text-decoration: underline;
+	color: #005EB8;
+}
+div#change-request-data, div#recruitment-request-data, div#termination-request-data, div#legacy-request-data {
+	display: none;
+}
+input {
+	display: block;
+	font-size: 20px;
+	margin: auto;
+	margin-bottom: 5px;
+	padding: 5px;
+	text-align: center;
+}
+input[type=button] {
+	width: 200px;
+	height: 60px;
+	background-color: #005EB8;
+	color: white;
+	font-size: 20px;
+	border: 0 none;
+	transition: background-color 0.2s;
+	cursor: pointer;
+}
+input[type=button]:hover {
+	background-color: #1a9cff;
+}
+input[type=button]:active {
+	background-color: #005799;
+}
+input[type=text] {
+	width: 400px;
+}
+p {
+	text-align: center;
+}
+p#search-result-info {
+	font-style: italic;
+}
+div#change-request-data table, div#recruitment-request-data table, div#termination-request-data table, div#legacy-request-data table {
+	border: 1px solid #000000;
+	border-collapse: collapse;
+	margin: auto;
+	text-align: center;
+	width: 100%;
+}
+div#change-request-data table tbody tr td, div#change-request-data table thead tr th, div#recruitment-request-data table tbody tr td, div#recruitment-request-data table thead tr th, div#termination-request-data table tbody tr td, div#termination-request-data table thead tr th, div#legacy-request-data table tbody tr td, div#legacy-request-data table thead tr th {
+	border: 1px solid #000000;
+	padding: 5px;
+	width: 25%;
+}
+@media only screen and (max-width: 2560px) {
+	body {
+		background-size: 2560px 1440px;	
+	}
+}
+@media only screen and (max-width: 1920px) { 
+	body {
+		background-size: 1920px 1080px;
+	}
+}
+@media only screen and (max-width: 1000px) { 
+	.wrapper {
+		width: 600px;
+	}
+	content a {
+		width: 180px;
+	}
+	
+	content a:last-child {
+		width: 80%;
+	}
+}
+@media only screen and (max-width: 700px) { 
+	h1 {
+		text-align: center;
+	}
+	body {
+		padding: 0;
+		margin: 0;
+	}
+	.wrapper {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	content a {
+		display: block;
+		line-height: 65px;
+		width: 80%;
+		float: none;
+		margin: 10px auto;
+	}
+	.logo {
+		float: none;
+		margin: 0 auto;
+		display: block;
+	}
+	input[type=text] {
+		width: 80%;
+	}
 }

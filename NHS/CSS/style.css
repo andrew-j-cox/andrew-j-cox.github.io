@@ -7,7 +7,8 @@
 }
 .site-bar a {
   padding: 10px;
-	background-color: #005EB8;
+	color: #005EB8;
+	text-decoration: none;
 }
 body {
 	font-family: Arial, Helvetica, sans-serif;
